@@ -9,8 +9,12 @@ import { RouteService } from '../services/route.service';
 export class LoginComponent {
   tourGuideCode:string="";
 
-  constructor(private auth:AuthService, private route: RouteService){}
+  constructor(private authService:AuthService, private routeService: RouteService){}
   validateTourGuideCode(){
-    this.auth.
-  }
+    
+    if(this.authService.login(this.tourGuideCode)){
+      this.routeService.navigateToTourRequestsView();
+    }
+
+    }
 }
