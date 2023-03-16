@@ -24,6 +24,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TourCardComponent,
     NotFoundComponent,
     TourRequestsComponent,
-    TourListComponent
+    TourListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
