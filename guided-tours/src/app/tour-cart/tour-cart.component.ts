@@ -18,6 +18,14 @@ export class TourCartComponent implements OnInit {
   stars: Array<number> = [];
   tourRequest: TourRequest = {};
 
+  submitStatus: boolean=false;
+  canDeactivate() {
+    if (!this.submitStatus)
+        this.submitStatus = confirm("You have not made a request to this tour, Are you sure you want to leave?");
+    return this.submitStatus;
+}
+
+
   constructor(private activatedRoute: ActivatedRoute,
     private tourService: TourService,
     private tourRequestService: TourRequestService,
@@ -31,6 +39,7 @@ export class TourCartComponent implements OnInit {
       this.tourService.getTour(id).subscribe(data => {
         this.tour = data;
         this.stars = new Array(this.tour.rating);
+        this.submitStatus = false;
       })
     })
   }
@@ -41,6 +50,7 @@ export class TourCartComponent implements OnInit {
         this.snackBar.open("Request Submitted", "", {
           duration: 3000
         });
+        this.submitStatus = true;
         this.routeService.navigateToHomeView();
       })
     }
