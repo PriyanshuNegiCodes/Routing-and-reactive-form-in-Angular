@@ -9,6 +9,7 @@ import { Tour } from '../models/tour';
 export class TourCardComponent implements OnInit {
 
   @Input()
+  //not null at run time
   tour!: Tour
   constructor() { }
 

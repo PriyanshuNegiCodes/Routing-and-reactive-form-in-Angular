@@ -15,6 +15,5 @@ export class LoginComponent {
     if(this.authService.login(this.tourGuideCode)){
       this.routeService.navigateToTourRequestsView();
     }
-
     }
 }

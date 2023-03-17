@@ -14,5 +14,4 @@ export class CanDeactivateGuard implements CanDeactivate<TourCartComponent> {
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return component.canDeactivate ? component.canDeactivate() : true;
   }
-  
 }
