@@ -14,18 +14,20 @@
         <img src="../../assets/images/{{tour?.image}}.jpg">
         <p>{{tour?.description}}</p>
     </div>
-    <form id="tour-request">
+    <form id="tour-request" >
         <h1>Book this Tour</h1>
         <h2>Tour Price ${{tour?.tourPrice}} USD &nbsp;<span id="per-tour"> PER TOUR</span></h2>
         <h3>When are you travelling?</h3>
         <mat-form-field appearance="legacy">
             <mat-label>Select Date</mat-label>
-            <input matInput type="date" required placeholder="First Name" name="dateOfTravel" [(ngModel)] = "tourRequest.dateOfTravel">
+            <input matInput type="date" required placeholder="First Name" name="dateOfTravel" [(ngModel)] = "tourRequest.dateOfTravel" min="{{minDate}}">
+      
+            <!-- <mat-error *ngIf="dateInvalid()">Please select a valid date.</mat-error> -->
         </mat-form-field>
         <h3>Enter your personal details</h3>
         <mat-form-field appearance="legacy">
             <mat-label>Name</mat-label>
-            <input matInput type="text"required placeholder="Name" name="customerName" [(ngModel)] = "tourRequest.customerName">
+            <input matInput type="text"required placeholder="Name" name="customerName" [(ngModel)] = "tourRequest.customerName" >
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Email</mat-label>
